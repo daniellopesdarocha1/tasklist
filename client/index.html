@@ -11,18 +11,20 @@
 				</a>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-rigth">
-					
+				<ul class="nav navbar-nav navbar-right">
+					{{> loginButtons}}
 				</ul>
 			</div>
 		</nav>
 	</header>
 
 	<main class="container">
-		
-		{{> novo}}
-
-		{{> lista}}
+		{{#if currentUser}}
+			{{> novo}}
+			{{> lista}}
+		{{else}}
+			Você deve se logar primeiro.
+		{{/if}}
 
 	</main>
 
